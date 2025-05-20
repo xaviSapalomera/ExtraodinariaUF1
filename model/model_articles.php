@@ -2,7 +2,7 @@
 //Xavi Gallego Palau
 
 try {
-	$connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+	$connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
 
 } catch (PDOException $e) {
 
@@ -14,7 +14,7 @@ try {
 //Actualitza el titol del article
 function actualitzarperTitol($id_POST, $titol) {
     try {
-        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+        $connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
         $stm = $connexio->prepare("UPDATE articles SET titol = ? WHERE id = ?");
         $stm->execute([$titol, $id_POST]);
     } catch(PDOException $e) {
@@ -25,7 +25,7 @@ function actualitzarperTitol($id_POST, $titol) {
 // Funcio per actualitzar el cos
 function actualitzarPerCos($id, $cos) {
     try {
-        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+        $connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
         $stm = $connexio->prepare("UPDATE articles SET cos = ? WHERE id = ?");
         $stm->execute([$cos, $id]);
     } catch(PDOException $e) {
@@ -40,7 +40,7 @@ function introduirArticles($titol, $cos,$data,$userid){
 
 	try{
 
-		$connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+		$connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
 		
 		$insert_Articles = $connexio->prepare('INSERT INTO articles(titol,cos,data,user_id) VALUES (?,?,?,?)');
 
@@ -59,7 +59,7 @@ function introduirArticles($titol, $cos,$data,$userid){
 //Mostra tots els articles
 function mostrarTotsArticles(){
 	try{
-		$connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+		$connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
 
 		$stmt = $connexio->prepare('SELECT id,titol,cos FROM articles');
 		
@@ -82,7 +82,7 @@ function borrarArticles($id){
 	try
 	{
 		
-		$connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+		$connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
 		
 		$stm = $connexio->prepare("DELETE FROM articles WHERE id=?");
 		
@@ -98,8 +98,8 @@ function borrarArticles($id){
 // Actualizat el titol i el cos del article
 function actualitzarPerTitolICos($id, $titol, $cos) {
     try {
-        // Establecer conexión con la base de datos
-        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_gallego', 'root', '');
+        
+        $connexio = new PDO('mysql:host=localhost;dbname=pt04_Xavi_Gallego', 'root', '');
         $connexio->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

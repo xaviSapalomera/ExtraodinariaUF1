@@ -1,4 +1,7 @@
 <?php
+// Xavi Gallego Palau
+
+
 include './model/model_articles.php';
 
 //Funcio per borrar el article segun el id de l'article

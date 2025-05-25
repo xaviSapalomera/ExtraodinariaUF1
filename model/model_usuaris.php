@@ -1,4 +1,6 @@
 <?php
+// Xavi Gallego Palau
+
 
 //Per crear usuaris
 function crearUsuari($dni,$nom,$cognom,$nickname,$email,$contrasenya){

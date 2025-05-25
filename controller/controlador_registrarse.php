@@ -1,4 +1,7 @@
 <?php
+// Xavi Gallego Palau
+
+
 $emailValidad = null;
     include './model/model_usuaris.php';
 

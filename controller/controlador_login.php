@@ -1,4 +1,7 @@
 <?php
+// Xavi Gallego Palau
+
+
  include './model/model_usuaris.php';
 
 

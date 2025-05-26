@@ -8,19 +8,27 @@ include './model/model_articles.php';
     $articles = mostrarTotsArticles();
 
 $paginaActual = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Obtener la página actual desde la URL, por defecto 1
+
+
 $totalPagines = 0; // Inicializar total de páginas a 0
 
 
+// Compta el nombre total d'articles
+$totalArticulos = count($articles);
 
-$totalArticulos = count($articles); // Els articles disponibles
-$articulosPorPagina = 3; // Define cuántos artículos quieres mostrar por página
+// Quans articles per pagina
+$articulosPorPagina = 3; 
 
+// Calcula el total de pagines que necesitarem
 if ($totalArticulos > 0) {
     $totalPagines = ceil($totalArticulos / $articulosPorPagina);
 }
 
-$offset = ($paginaActual - 1) * $articulosPorPagina;
-$articles = array_slice($articles, $offset, $articulosPorPagina); // Ajustar la lógica según tu método para obtener artículos
+// Calcula quin es el primer article que mostrara de cada pagina
+$posicioInici = ($paginaActual - 1) * $articulosPorPagina;
+
+// Agafa nomes els articles de la pagina actual
+$articles = array_slice($articles, $posicioInici, $articulosPorPagina); // Ajustar la lógica según tu método para obtener artículos
 
 
 ?>
@@ -39,7 +47,7 @@ $articles = array_slice($articles, $offset, $articulosPorPagina); // Ajustar la 
 					<?php } ?>
 				</ul>
 			<?php }else{ ?>
-				<p>No hi ha articles disponibles en aquesta pàgina.</p>
+				<p>No hi ha articles disponibles en aquesta pagina.</p>
 			<?php } ?>
 			</section>
 

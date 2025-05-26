@@ -13,7 +13,7 @@ function logearUsuari($correu, $password) {
             return;
         }
 
-        // Hashear la contraseña
+        // Hashear la contrasenya
         $contrasenya_hash = hash('sha256', $password);
 
         // Verificar login

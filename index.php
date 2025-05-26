@@ -8,7 +8,7 @@ session_start();
 // Acciona els metodes del index.php (per defecte el valor es home)
 $action = $_GET['action'] ?? 'home';
 
-// Metodes que sol funcionen si estas logeat
+
 
 // Per accionar el formulari de registrarse
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action === 'registrarse') {
